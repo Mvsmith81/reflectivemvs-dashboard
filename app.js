@@ -99,3 +99,14 @@
     return `<li><a href="${link.href}" target="_blank" rel="noopener">${link.name}</a></li>`;
   }).join("");
 })();
+
+  // Render blog manager section
+  const blogSection = document.createElement('section');
+  blogSection.className = 'card';
+  blogSection.innerHTML = '<h2>Blog Manager</h2><ul class="list" id="blogLinks"></ul>';
+  document.querySelector('main.shell.grid').appendChild(blogSection);
+  const blogEl = document.getElementById('blogLinks');
+  blogEl.innerHTML = cfg.blogLinks.map(link => {
+    return `<li><a href="${link.href}" target="_blank" rel="noopener">${link.name}</a></li>`;
+  }).join("");
+
