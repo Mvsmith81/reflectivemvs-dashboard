@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reflective MVS — Editorial Command Center</title>
+  <!-- Import our fonts and base styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+  <!-- Config and application scripts -->
+  <script defer src="./config.js"></script>
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <!-- Header with logo and navigation -->
+  <header class="shell header">
+    <div class="logo-wrap">
+      <!-- Use the blog’s own logo hosted on Blogger. If you self-host later, update src accordingly. -->
+      <img class="logo" src="https://blogger.googleusercontent.com/img/a/AVvXsEjpy0YzxOOUKg1eRb7ssnQENAxIu-g_o0U9Ohbq2yzOOSh0qHTN1g1HPlj1DP6OoAAz9vJpMOUJwgiHQg7RF6CH0v80bHy1fQFtdqG8I08eVVeNbQ8bERmbav-GLGa6xwDvc5ZLRJV3aeW7l7a0KOzTy9ZlZsHRR9r2lzmYxGZc-EhBNvQXcVACzOYBjoM=s1531" alt="Reflective MVS Logo">
+    </div>
+    <nav class="quick-links" id="quickLinks"></nav>
+  </header>
+
+  <!-- Main content grid -->
+  <main class="shell grid">
+    <!-- KPI / Analytics cards -->
+    <section class="card kpi">
+      <h2>Traffic &amp; Engagement</h2>
+      <p class="muted">Paste your Looker Studio share link into <code>config.js</code>.</p>
+      <div class="frame" id="gaFrame"></div>
+    </section>
+
+    <section class="card kpi">
+      <h2>Search Performance</h2>
+      <p class="muted">Clicks, impressions, CTR, avg position.</p>
+      <div class="frame" id="gscFrame"></div>
+    </section>
+
+    <!-- Latest posts from the blog -->
+    <section class="card">
+      <h2>Latest on ReflectiveMVS.com</h2>
+      <ul class="list" id="latestPosts">
+        <li class="muted">Loading posts…</li>
+      </ul>
+    </section>
+
+    <!-- Topics to cover -->
+    <section class="card">
+      <h2>Topics to Cover</h2>
+      <ul class="chips" id="topics"></ul>
+      <button id="shuffleTopics" class="btn">Shuffle</button>
+    </section>
+
+    <!-- News feed -->
+    <section class="card wide">
+      <h2>News Radar</h2>
+      <div class="feeds" id="newsFeeds"></div>
+      <p class="muted tiny">Sources are editable in <code>config.js</code>.</p>
+    </section>
+
+    <!-- Draft launcher using ChatGPT project link -->
+    <section class="card action">
+      <h2>Quick Draft</h2>
+      <p>Open your ChatGPT project to spin up an outline in your voice.</p>
+      <a id="draftBtn" class="btn primary" target="_blank" rel="noopener">Open Draft Workspace</a>
+    </section>
+
+    <!-- Backlog of story ideas -->
+    <section class="card">
+      <h2>Backlog</h2>
+      <ul class="list" id="backlog"></ul>
+    </section>
+
+    <!-- Social accounts section -->
+    <section class="card social">
+      <h2>Follow Reflective MVS</h2>
+      <ul class="social-links" id="socialLinks"></ul>
+    </section>
+  </main>
+
+  <footer class="shell foot">
+    <span>© <span id="year"></span> Reflective MVS</span>
+    <span>Built with grit, clarity, and receipts.</span>
+  </footer>
+</body>
+</html>
