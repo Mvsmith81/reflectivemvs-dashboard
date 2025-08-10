@@ -1,0 +1,91 @@
+/* Base colour palette and variables */
+:root{
+  --bg:#0b0f1a;
+  --card:#11172a;
+  --ink:#e9eefc;
+  --muted:#9aa6c5;
+  --accent:#5b8cff; /* blue accent */
+  --accent2:#ff5bb2; /* pink accent */
+  --radius:18px;
+}
+
+/* Reset and typography */
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Arial,sans-serif;line-height:1.4}
+
+/* Container */
+.shell{max-width:1200px;margin:0 auto;padding:18px}
+
+/* Header styles */
+.header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.logo-wrap{display:flex;align-items:center}
+.logo{display:block;max-width:240px;height:auto}
+.quick-links a{color:var(--ink);text-decoration:none;margin-left:12px;padding:8px 12px;border-radius:12px;background:#0f1527;border:1px solid #1b2440;font-size:0.9rem}
+.quick-links a:hover{border-color:#33427a}
+
+/* Grid layout */
+.grid{display:grid;gap:16px;grid-template-columns:repeat(12,1fr)}
+.card{background:var(--card);border:1px solid #1b2440;border-radius:var(--radius);padding:18px}
+.card.wide{grid-column:span 8}
+.kpi{grid-column:span 6}
+.action{grid-column:span 4}
+.social{grid-column:span 4}
+.card h2{margin-bottom:10px;font-size:1.25rem}
+
+/* Text colours */
+.muted{color:var(--muted)}
+.tiny{font-size:0.8rem}
+
+/* Lists and chips */
+.list{list-style:none;display:grid;gap:10px}
+.list li{padding:10px;border-radius:12px;background:#0f1527;border:1px solid #1b2440}
+
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips li{list-style:none;background:#0f1527;border:1px solid #1b2440;padding:8px 12px;border-radius:999px;font-size:0.85rem}
+
+/* Buttons */
+.btn{display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid #233260;background:#0f1527;color:var(--ink);text-decoration:none;cursor:pointer;font-size:0.9rem}
+.btn:hover{border-color:#33427a}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent2));border:none;color:var(--bg);font-weight:700}
+
+/* Frames for embed views */
+.frame{position:relative;width:100%;height:360px;border-radius:14px;overflow:hidden;border:1px solid #1b2440;background:#0f1527}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* News feed grid */
+.feeds{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
+.feed{border:1px solid #1b2440;border-radius:14px;overflow:hidden;background:#0f1527}
+.feed h3{margin:0;padding:12px 14px;border-bottom:1px solid #1b2440;font-size:1rem}
+.feed ul{list-style:none;margin:0;padding:12px 14px;display:grid;gap:10px;max-height:300px;overflow:auto;font-size:0.9rem}
+.feed a{color:var(--ink);text-decoration:none}
+
+/* Footer */
+.foot{display:flex;justify-content:space-between;color:var(--muted);font-size:0.9rem;margin-top:24px}
+
+/* Social links section */
+.social-links{list-style:none;display:flex;flex-wrap:wrap;gap:12px;padding:0;margin:0}
+.social-links li{background:#0f1527;border:1px solid #1b2440;border-radius:14px;padding:8px 12px;font-size:0.9rem}
+.social-links li a{color:var(--ink);text-decoration:none;display:block}
+.social-links li a:hover{color:var(--accent)}
+
+/* Media queries */
+@media (max-width:1000px){
+  .kpi,.action,.card.wide,.social{grid-column:span 12}
+  .feeds{grid-template-columns:1fr}
+}
+
+/* Make layout mobile-friendly for small screens */
+@media (max-width:600px){
+  /* Stack all grid cards on top of each other */
+  .grid{grid-template-columns:1fr}
+  .kpi,.action,.card,.card.wide,.social{grid-column:span 1}
+  .feeds{grid-template-columns:1fr}
+}
+
+/* Custom blue gradient for the Quick Draft button */
+#draftBtn{
+  background: linear-gradient(90deg,#5b8cff,#3395ff);
+  border: none;
+  color: var(--bg);
+  font-weight: 700;
+}
